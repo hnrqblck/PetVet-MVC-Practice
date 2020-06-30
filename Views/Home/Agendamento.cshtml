@@ -1,0 +1,55 @@
+@model Agendar
+@{
+    ViewData["Title"] = "Agendamento";
+}
+<div class="agendamento">
+    <h2>Pré-Agendamento</h2>
+    <form method="post" id="agendamento" >
+        <fieldset class="formInformacoes">
+            <legend>
+                Suas informações:
+            </legend>
+            <p>
+                <label asp-for="NomeDono">Nome:</label>
+                <input asp-for="NomeDono" name="NomeDono" required="required" placeholder="Nome"/>
+            </p>
+            <p>
+                <label asp-for="Email">E-mail:</label>
+                <input asp-for="Email" name="Email" type="email" placeholder="nome&#64;example.com" required/>
+            </p>
+            <p>
+                <label asp-for="Telefone">Telefone:</label>
+                <input asp-for="Telefone" name="Telefone" type="tel" minlength="8" placeholder="9999-9999" required/>
+            </p>
+        </fieldset>
+        <fieldset class="formAgendamento">
+            <legend>
+                Agendamento:
+            </legend>  
+            <p>
+                <label asp-for="NomePet">Nome do pet:</label>
+                <input asp-for="NomePet" name="NomePet" placeholder="Bob"/>
+            </p>
+            <p>
+                <label asp-for="Data">Data:</label>
+                <input asp-for="Data" type="date" name="Data" required/>
+            </p>
+            <p>
+                <label asp-for="Animal">Animal:</label>
+                <select name="Animal" asp-for="Animal">
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Passaro">Pássaro</option>
+                    <option value="Coelho">Coelho</option>
+                    <option value="Cobra">Cobra</option>
+                    <option value="Hamster">Hamster</option>
+                </select>
+            </p>
+            <p>
+                <label asp-for="Necessidade">Necessidade:</label>
+                <textarea asp-for="Necessidade" name="Necessidade" cols="20" rows="4">Qual a necessidade do seu pet?</textarea>
+            </p>
+        </fieldset>
+        <input type="submit" value="Agendar" id="button">
+    </form>
+</div>

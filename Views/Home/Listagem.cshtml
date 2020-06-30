@@ -1,0 +1,39 @@
+@model List<Agendar>
+@{
+    ViewData["Title"] = "Agendamentos";
+}
+<div class="listagem">
+    <h2>Horários marcados</h2>
+
+    <table>
+        <thead>
+            <th>Data</th>
+            <th>Nome do Dono</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Nome do Pet</th>
+            <th>Animal</th>
+            <th>Necessidade</th>
+        </thead>
+        <tbody>
+            @foreach (Agendar pets in Model)
+            {
+                <tr>
+                    <td>@pets.Data</td>
+                    <td class="tag-lighter">@pets.NomeDono</td>
+                    <td>@pets.Telefone</td>
+                    <td class="tag-lighter">@pets.Email</td>
+                    <td>@pets.NomePet</td>
+                    <td class="tag-lighter">@pets.Animal</td>
+                    <td>@pets.Necessidade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Agendamento">
+            <button type="submit">Agendar</button>
+    </a>
+    <a asp-action="Index">
+            <button type="submit">Concluir</button>
+    </a>
+</div>

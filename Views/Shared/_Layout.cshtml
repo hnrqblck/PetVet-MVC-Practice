@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="pu-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - PetVet</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-wrapper">
+        <header class="nav-bar">
+            <a asp-action="Index"><img class="logo" src="/images/logo.png" alt=""></a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a asp-action="Index">Home</a></li>
+                    <li><a asp-action="Servicos">Serviços</a></li>
+                    <li><a asp-action="Agendamento">Agendar</a></li>
+                    <li><a asp-action="Listagem">Agendamentos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content-wrap">
+            <main id="main">
+                @RenderBody()
+            </main>
+        </div>
+            <footer id="footer">
+            <div>
+                <p class="foot">&copy; 2020 - PetVet <address>pet@vet.com</address></p>
+            </div>
+        </footer>
+    </div>    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
